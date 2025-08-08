@@ -1,0 +1,16 @@
+doctype html
+html(lang='en')
+head
+    title Todo
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css")
+    //- Livereload
+    //- script(type='text/javascript' src="script.js") 
+body
+    main(class="container")
+        a(href="/")
+            h1 Todo (MPA)
+        div(id="todoform")
+            include ../components/inputform.pug
+        div(id="todolist")
+            include ../components/todolist.pug

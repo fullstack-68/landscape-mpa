@@ -1,0 +1,13 @@
+//- Main form
+- var gridTemplateColumns = mode === "ADD" ? "4fr 1fr" : "4fr 1fr 1fr"
+div(class="grid" style=`grid-template-columns: ${gridTemplateColumns}; align-items: center`)
+    form(method="POST" action=`${mode==="ADD"? "/create" : "/update"}` style="display: contents")
+        input(type="text" name="todoText", value=curTodo.todoText)
+        button(type="submit")=`${mode==="ADD"? "Submit" : "Update"}`
+        input(type="hidden" value=`${curTodo.id}` name="curId")
+    //- Cancel button
+    if mode==="EDIT"
+        form(method="GET" action="/" style="display: contents")
+            button(type="submit" class="contrast") Cancel
+if message
+    div(class="pico-color-red-400")=message
